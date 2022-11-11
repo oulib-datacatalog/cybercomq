@@ -1,11 +1,8 @@
-from celery import Celery
-import celeryconfig
+from celery import shared_task
 
-app = Celery()
-app.config_from_object(celeryconfig)
 
 #Example task
-@app.task()
+@shared_task()
 def add(x, y):
     """ Example task that adds two numbers or strings
         args: x and y
